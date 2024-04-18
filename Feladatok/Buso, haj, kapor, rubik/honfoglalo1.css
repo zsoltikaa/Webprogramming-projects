@@ -1,0 +1,73 @@
+body {
+    background-image: url(honfoglalo/bg.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color: #333;
+    color: white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    line-height: 2em;
+    
+}
+
+.kor {
+    list-style: armenian;
+    text-align: center;
+}
+
+.romai {
+    list-style: lower-greek;
+    float: right;
+}
+
+.tartalom {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #FDE55F;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 3em;
+    border-bottom-style: double;
+    border-bottom-width: 5px;
+    border-bottom-color: #FDE55F;
+    padding: 10px;
+}
+
+h2,h3 {
+    color: rgb(146, 58, 228);
+    text-transform: uppercase;
+    text-align: right;
+}
+
+#logo {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.kozepre {
+    text-align: center;
+}
+
+p{
+    text-align: justify;
+}
+
+.klanok {
+    width: 20%;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    color: #fde55f;
+}
+
+a:hover {
+    color: rgb(48, 130, 197);
+}
+
+.forras {
+    float: right;
+}

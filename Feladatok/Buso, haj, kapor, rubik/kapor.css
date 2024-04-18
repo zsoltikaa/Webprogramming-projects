@@ -1,0 +1,31 @@
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #336600;
+}
+
+a :hover{
+    color: #336600;
+}
+
+#cimkep {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #22B14C;
+}
+
+#noveny {
+    float: right;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 2px solid black;
+}
+
+table, td {
+    border: 2px solid black ;
+}

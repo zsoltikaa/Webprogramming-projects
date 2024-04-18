@@ -1,0 +1,55 @@
+﻿body{
+    background-image: url(bg.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color: #333;
+    color: white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    line-height: 3em;
+    
+}
+.kor{
+    list-style:circle;
+}
+.romai{
+    list-style:upper-roman;
+}
+.tartalom{
+    width: 100%;
+    margin: 0 auto;
+}
+h1{
+    color: #e35ffd;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 3em;
+    border-bottom-style: double;
+    border-bottom-width: 5px;
+    border-bottom-color: #FDE55F;
+    padding: 10px;
+}
+h2,h3{
+    color: #8e5ffd;
+    text-transform: uppercase;
+}
+#logo{
+    width: 70%;
+    
+}
+.kozepre{
+    text-align: center;
+}
+p{
+    text-align: left;
+}
+.klanok{
+    width: 5%;
+    float: right;
+}
+a{
+    text-decoration: none;
+    color: #fd775f;
+}
+a:hover{
+    color: #FDE55F;
+}

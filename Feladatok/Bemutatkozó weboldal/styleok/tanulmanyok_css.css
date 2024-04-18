@@ -1,0 +1,41 @@
+body {
+    background: #E6DADA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-secondary {
+    background-color: rgb(214, 212, 212);
+}
+
+.navszoveg {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: initial;
+    font-size: 18px;
+}
+
+#hover {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+#iskolak {
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 1%;
+    font-size: 65px;
+    font-family: monospace;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+    font-family: monospace;
+    text-decoration: none;
+    font-style: italic;
+}

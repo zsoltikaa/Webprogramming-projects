@@ -1,0 +1,37 @@
+body{
+    margin: 10px;
+    background-color: burlywood;
+}
+
+.cím{
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 0%;
+}
+
+.navigaciossav a{
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: underline;
+}
+
+.navigaciossav a:hover{
+    background-color: #333;
+    color: rgb(255, 255, 255);
+}
+
+.navigaciossav{
+    background-color: saddlebrown;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.szöveg{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 22px;
+    text-align: justify;
+    width: 99%;
+}

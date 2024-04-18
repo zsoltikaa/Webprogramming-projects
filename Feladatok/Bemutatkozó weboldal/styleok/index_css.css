@@ -1,0 +1,60 @@
+body {
+    background: #E6DADA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-secondary {
+    background-color: rgb(214, 212, 212);
+}
+
+.navszoveg {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: initial;
+    font-size: 18px;
+}
+
+#hover {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+#en {
+    float: left;
+    border: 2.5px solid black;
+    margin: 1%;
+    border-radius: 10%;
+}
+
+#foszoveg {
+    text-align: center;
+    margin-top: 21%;
+    font-size: 100px;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: monospace;
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+      background-color: #333; /* Change background color */
+      position: absolute; /* Ensure it covers the entire screen */
+      top: 56px; /* Adjust top spacing to match your navbar height */
+      left: 0;
+      right: 0;
+      z-index: 9999; /* Ensure it's on top of other content */
+    }
+  
+    .navbar-nav {
+      text-align: center;
+      padding: 10px; /* Add some spacing around the links */
+    }
+  
+    .nav-link {
+      color: #fff;
+      margin: 10px;
+    }
+  }
