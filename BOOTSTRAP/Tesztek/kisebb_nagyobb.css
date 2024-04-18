@@ -1,0 +1,35 @@
+h1 {
+    color: darkblue;
+    text-align: center;
+    margin: 2%;
+    border: black dashed 2px;
+    font-weight: bold;
+}
+
+body {
+    background: #2C3E50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);
+    background: linear-gradient(to right, #4CA1AF, #2C3E50); 
+}
+
+p {
+   margin-top: 10px;
+   margin-bottom: 10px ;
+}
+
+img {
+    padding: 5px;
+}
+
+a {
+    color: darkred;
+    text-align: center;
+    display: block;
+    font-size: 28px;
+    margin: 1%;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}

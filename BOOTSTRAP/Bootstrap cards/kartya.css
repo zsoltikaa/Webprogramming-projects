@@ -1,0 +1,16 @@
+body {
+    background-color: grey;
+}
+
+.card-body, .card-img-top {
+    background-color: gainsboro;
+}
+
+.row {
+    justify-content: center;
+}
+
+.card {
+    margin-top: 10%;
+}
+
