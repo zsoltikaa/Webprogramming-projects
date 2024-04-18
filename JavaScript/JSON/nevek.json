@@ -1,0 +1,15 @@
+{
+    "firstName": "Pádár",
+    "lastName": "Zsolt",
+    "gender": "male",
+    "age": 18,
+    "address": {
+        "streetAddress": "26 Guatamela",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalCode": "354323"
+    },
+    "phoneNumbers": [
+        { "type": "business", "number": "9323227323" }
+    ]
+}

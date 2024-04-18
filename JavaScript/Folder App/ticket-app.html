@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket App</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+    <body>
+        
+        <table>
+
+            <tr>
+                <form onchange="count()">
+                <td>How many tickets do you need?</td>
+                <td><input type="number" name="" id="number" value="0" min="1" onchange="count()"></td>
+            </tr>
+            <tr>
+                <td>What kind of tickets do you want?</td>
+                <td>
+                    <form onchange="count()">
+                        <label for="adult">Adult</label>
+                        <input type="radio" name="radio" id="adult" value="adult" onchange="count()">
+                        <label for="adult">Student</label>
+                        <input type="radio" name="radio" id="student" value="student" onchange="count()">
+                        <label for="adult">Retired</label>
+                        <input type="radio" name="radio" id="retired" value="retired" onchange="count()">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Ammount to be paid:</td>
+                <td><input type="number" name="sum" id="sum" disabled></td>
+            </tr>
+
+        </table>
+
+        <script>
+
+            function count() 
+            {
+                let number = parseInt(document.getElementById("number").value);
+                console.log(number)
+
+                if (document.getElementById("adult").checked)
+                {
+                    price = 600;
+                }
+                else if (document.getElementById("student").checked) 
+                {
+                    price = 400;
+                }
+                else 
+                {
+                    price = 200;
+                }
+                console.log(price)
+
+                let discount = number > 10 ? 0.9 : 1;
+                document.getElementById("sum").value = number * price * discount;
+
+            }
+
+        </script>
+
+    </body>
+
+</html>

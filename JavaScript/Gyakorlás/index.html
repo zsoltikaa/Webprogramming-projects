@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+    <body>
+        
+        <h1>Tasks:</h1>
+        <h3>1.</h3>
+        <p id="first"></p>
+
+        <h3>2.</h3>
+        <p id="second"></p>
+
+        <h3>3.</h3>
+        <p id="third"></p>
+
+        <h3>4.</h3>
+        <p id="fourth"></p>
+
+        <h3>5.</h3>
+        <p id="fifth"></p>
+
+        <script>
+
+            let num1 = 5;
+            let num2 = 10;
+            let sum = num1 + num2;
+
+            document.getElementById("first").innerHTML = sum;
+
+            // tomb
+            const fruit = ["apple", "banana", "watermelon"];
+            // konstruktorral
+            // fruit2 = new Array("apple", "banana", "watermelon");
+
+            console.log(fruit);
+            console.log(fruit[0]);
+
+            // csereles
+
+            fruit[0] = "guava";
+
+            // hozzaadas
+
+            fruit.push("rombután");
+
+            document.getElementById("second").innerHTML = "gyümölcsök: " + fruit.join(", ");
+
+            // objektum
+
+            const phones = {
+                brand : 'Vertu',
+                name : 'Gold',
+                price : 2000,
+                currency : "$"
+            }
+
+            phones.owner = "Akos";
+
+            console.log(phones)
+
+            phones.price = 3000;
+
+            document.getElementById("third").innerHTML = phones.owner + "Ákos telefonja: " + phones.brand;
+
+            let i;
+            let numArray = [];
+
+            for (let i = 1; i <= 5; i++) 
+            {
+                numArray.push(i);    
+            }
+
+            console.log(numArray);
+
+            document.getElementById("fourth").innerHTML = "Számok 1-től 5-ig: " + numArray.join(", ");
+
+            function multiplyNumbers(x, y,) 
+            {
+                return x * y;
+            }
+
+            let result = multiplyNumbers(3, 5);
+
+            document.getElementById("fifth").innerHTML = "A számok szorzata: " + result ;
+
+        </script>
+
+    </body>
+
+</html>
