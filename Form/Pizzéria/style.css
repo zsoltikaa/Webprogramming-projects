@@ -1,0 +1,194 @@
+body {
+    background: #f12711;
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711); 
+    background: linear-gradient(to right, #f5af19, #f12711);
+    margin: 0; 
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar, .navbar-expand-lg, .bg-body-tertiary {
+    background: #f12711;  
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711); 
+    background: linear-gradient(to right, #f5af19, #f12711);
+    width: 100%;
+    background-image: url(../Pizzéria/facebook_cover_image_pizza_5\ \(1\).png);
+    background-size: cover;
+    background-position: 10px;
+    padding: 0 15px;
+}
+
+.navbar-brand, .navbar-brand:hover, .navbar-brand:focus {
+    font-size: 50px;
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    font-style: italic;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.form-control, .form-control:focus {
+    background-color: #ffffff81;
+    color: #ffffff81;
+}
+
+.btn-outline-light {
+    background-color: #ffffff81;
+    color: #ffffff81;
+}
+
+.row {
+    margin: 50px 0;
+}
+
+p {
+    text-align: justify;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    color: white;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+h1 {
+    color: white;
+}
+
+#cim {
+    text-shadow: 0 0 10px #d17409, 0 0 20px #d68e3c, 0 0 30px #8d500a, 0 0 40px #804707, 0 0 50px #9e5b0d, 0 0 60px #af640d, 0 0 70px #ad6410;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.cimek {
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 0 0 10px #81531d, 0 0 20px #e9983b, 0 0 30px #d17b19, 0 0 40px #804707, 0 0 50px #9e5b0d, 0 0 60px #af640d, 0 0 70px #ad6410;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+img {
+    border-radius: 5%;
+    border: 1px solid #794204;
+}
+
+.bemutatkozas {
+    font-size: 22.5px;
+    font-style: italic;
+}
+
+#kosarba {
+    background-color: rgb(197, 115, 14);
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+#kosarba:hover {
+    background-color: darkorange;
+    border: 1px solid black;
+}
+
+.select-pizza {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#pizza-select {
+    background-color: transparent;
+    border: 1.5px solid black;
+    border-radius: 10px 100px / 120px;
+    text-align: center;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+#pizzak {
+    text-align: left;
+}
+  
+.input {
+    background-color: #ffffff81;
+    color: #ffffff81;
+    border: 1px solid white;   
+    line-height: 2.2rem;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.gomb {
+    background-color: #ffffff81;
+    color: #ffffff81;
+    border: 1px solid white;
+    line-height: 2.2rem;
+    border-radius: 5%;
+}
+
+.login-container {
+    padding: 10px 20px;   
+}
+
+.gomb:hover {
+    background-color: #ffffffd5;
+}
+
+.foot{
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    float: left;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    background-color: #ffffff52;
+}
+
+svg{
+    transition: 0.4s;
+}
+
+svg:hover {
+    fill: #cccccc;
+}
+
+select option {
+    background-color: rgb(194, 117, 22);
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.kosar_gomb {
+    background-color: rgb(194, 117, 22);
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid black;
+}
+
+.kosar_gomb:hover {
+    background-color: #794204;
+    border: 1px solid black;
+    color: black;
+    transition: 1s;
+}
