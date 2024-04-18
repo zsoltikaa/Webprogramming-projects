@@ -1,0 +1,33 @@
+body {
+    background-image: url("/BOOTSTRAP/karacsonyi_weboldal/196797.jpg");
+}
+
+.navbar {
+    background-color: rgb(57, 15, 85);
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+    font-style: italic; 
+}
+
+.navbar-brand:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.kep1, .kep3 {
+    float: left;
+    display: flex;
+    border: 2px solid black;
+    margin: 1%;
+}
+
+.kep2, .kep4 {
+    float: right;
+    display: flex;
+    border: 2px solid black;
+    margin: 1%;
+}

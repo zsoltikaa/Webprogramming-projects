@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(24, 24, 24);
+}
+
+h1 {
+    color: #6309b8;
+    font-family: 'Meie Script', cursive;
+    font-size: 70px;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-shadow: 0 0 5px #6309b8, 0 0 10px #410b74, 0 0 15px #6309b8, 0 0 20px #6309b8, 0 0 25px #6309b8, 0 0 30px #6309b8, 0 0 35px #6309b8;
+}
+
+.container {
+    text-align: center;
+    margin-top: 13%;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid #6309b8;
+    box-shadow: 0 0px 10px 0 #6309b8 inset, 0 0px 10px 0 #6309b8;
+    border-radius: 7.5px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+label {
+    color: white;
+    display: block;
+    font-family: 'Meie Script', cursive;
+    font-size: 25px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    margin-bottom: 5px;
+    color: #6309b8;
+}
+
+#submit {
+    display: block;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+select {
+    background-color: transparent;
+    border: 1px solid #6309b8;
+    box-shadow: 0 0px 10px 0 #6309b8 inset, 0 0px 10px 0 #6309b8;
+    border-radius: 7.5px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+select option {
+    color: black;  
+}
+
+#nemek {
+    color: white;
+    font-size: 20px;
+}

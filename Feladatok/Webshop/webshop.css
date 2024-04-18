@@ -1,0 +1,65 @@
+body {
+    background-image: url("https://hazvadaszok.hu/wp-content/uploads/2021/01/teto-fajtak.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.focim {
+    display: block;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 1%;
+    font-style: italic;
+    text-decoration: underline;
+    color: black;
+}
+
+.card-body, .card-title, .card-text {
+    background-color: white;
+}
+
+.card-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.card-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block;
+    text-align: center;
+}
+
+#elso_kep {
+    width: 0 auto;
+    height: auto;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 3rem;
+}
+
+.reszletek {
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+    font-family: monospace;
+    font-weight: bolder;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.kep {
+    float: left;
+    margin: 1%;
+    width: auto 0;
+    height: auto 0;
+    border: 3px solid black;
+    border-radius: 1%;
+}

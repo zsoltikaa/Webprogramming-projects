@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Registry</h1>
+
+        <form action="valami.php">
+
+            <label for="email">Email</label>
+            <input type="text" name="email"></input>
+            <label for="password">Password</label>
+            <input type="password" name="password" minlength="8" maxlength="50"></input>
+            <label for="szam">Mobile number</label>
+            <input type="tel" id="phone" name="phone" placeholder="06-123-456-789" pattern="[0-6]{2}-[0-9]{2}-[0-9]{3}-[0-9]{4}" required>
+            <label for="gender">Gender</label>
+            <label for="nem" id="nemek"><input type="radio" name="gender" value="male" id="male"></input>Male</label>
+            <label for="nem" id="nemek"><input type="radio" name="gender" value="female" id="male"></input>Female</label>
+            <label for="lakhely">Residency</label>
+            <select id="city" name="city" class="form-select">
+                <option value="">Select City</option>
+                <option value="Balassagyarmat">Balassagyarmat</option>
+                <option value="Bátonyterenye">Bátonyterenye</option>
+                <option value="Bercel">Bercel</option>
+                <option value="Buják">Buják</option>
+                <option value="Diósjenő">Diósjenő</option>
+                <option value="Érsekvadkert">Érsekvadkert</option>
+                <option value="Héhalom">Héhalom</option>
+                <option value="Jobbágyi">Jobbágyi</option>
+                <option value="Karancskeszi">Karancskeszi</option>
+                <option value="Karancslapujtő">Karancslapujtő</option>
+                <option value="Kazár">Kazár</option>
+                <option value="Mátranovák">Mátranovák</option>
+                <option value="Mátraterenye">Mátraterenye</option>
+                <option value="Mátraverebély">Mátraverebély</option>
+                <option value="Nagyoroszi">Nagyoroszi</option>
+                <option value="Palotás">Palotás</option>
+                <option value="Pásztó">Pásztó</option>
+                <option value="Rétság">Rétság</option>
+                <option value="Rimóc">Rimóc</option>
+                <option value="Romhány">Romhány</option>
+                <option value="Salgótarján">Salgótarján</option>
+                <option value="Somoskőújfalu">Somoskőújfalu</option>
+                <option value="Szécsény">Szécsény</option>
+                <option value="Szurdokpüspöki">Szurdokpüspöki</option>
+                <option value="Tar">Tar</option>
+            </select>   
+            <label for="vehicle1"><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">I accept the general terms and conditions and I'm over 16 years of age.</label><br>
+            <input type="submit" value="sign up" id="submit"></input>
+
+        </form> 
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+body {
+    background-image: url("/BOOTSTRAP/karacsonyi_weboldal/196797.jpg");
+}
+
+.navbar {
+    background-color: rgb(57, 15, 85);
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: white;
+    font-family: 'Whisper', cursive;
+}
+
+.navbar-brand:hover {
+    color: red;
+    text-decoration: none;
+}
+
+#termekek {
+  text-align: center;
+  font-size: 75px;
+  display: block;
+  padding: 0;
+  color: rgb(174, 73, 224);
+  font-family: 'Whisper', cursive;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.row {
+    justify-content: center;
+    margin-top: 1.5%;
+}
+
+.card {
+    margin: 1%;
+}
+
+.card-body, .card-title, .card-text {
+    text-align: center;
+}
+
+.card-img-top {
+    margin-top: 2%;
+}
+
+#galeria {
+    font-family: 'Whisper', cursive;
+    font-size: 22px;
+}
+
+.visszaszamlalo {
+    text-align: center;
+    margin-bottom: 0.5%;
+    width: 75rem;
+}
