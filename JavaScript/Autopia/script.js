@@ -26,7 +26,7 @@ function renderCars(response) {
         `
         <div class="row">
             <div class="col-3">
-                <img src="${data.url}" alt="">
+            <img src="${data.url}" alt="">
             </div>
             <div class="col-3 d-flex flex-column justify-content-center align-items-center">
                 <p>${data.márka} ${data.modell} ${data.típusjel}</p>
@@ -41,8 +41,8 @@ function renderCars(response) {
                 <p>Üzemanyag: ${data.üzemanyag_típus}</p>
             </div>
             <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                <p>Km óra állása: ${data.km_óra_állás} Km</p>
-                <p>Érvényes magyar forgalmi: ${data.magyar_okmányos_e ? "Igen" : "Nem"}</p> <!-- A "-" helyett használj "_", és "magyar_okmányos-e" helyett "magyar_okmányos_e" -->
+                <p>Km óra állása: ${data.km} Km</p>
+                <p>Érvényes magyar forgalmi: ${data.okmanyok ? "Igen" : "Nem"}</p>
                 <p>Elérhetőség: ${data.elérhetőség}</p>
                 <p>Vételár: ${formatter.format(data.vételár)} HUF</p>
             </div>
