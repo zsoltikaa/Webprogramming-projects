@@ -18,12 +18,38 @@
 
             <nav class="navbar navbar-light bg-light ">
                 <a class="navbar-brand" href="#">
-                <img src="src/autopngicon.png" width="30" height="30" class="d-inline-block align-top logo animate__animated animate__backInDown" alt="">
-                <span class="animate__animated animate__backInDown">
-                    Autopia
-                </span>
+                    <img src="src/autopngicon.png" width="30" height="30" class="d-inline-block align-top logo animate__animated animate__backInDown" alt="">
+                    <span class="animate__animated animate__backInDown">
+                        Autopia
+                    </span>
                 </a>
+                <button id="filterButton" onclick="toggleFilters()" class="btn btn-dark">Filters</button>
             </nav>
+            <div class="filterMenu">
+                <form>
+                    <div class="col-12 col-lg-4">
+                        <div class="mb-3">
+                            <label for="carBrand">Car brands</label>
+                            <select class="form-select" aria-label="Brand" id="carBrand">
+                                <option selected>Select</option>
+                                <option value="1">Audi</option>
+                                <option value="2">BMW</option>
+                                <option value="3">Volvo</option>
+                              </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="carType" class="form-label">Type</label>
+                            <input type="text" class="form-control" id="carType">
+                          </div>
+                          <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                  </form>
+            </div>
+            
 
             <!--NAVBAR END-->
   
@@ -32,6 +58,12 @@
             <div class="container-fluid">
             </div>
 
+            <div class="pagination-container d-flex justify-content-center mt-5">
+                <ul class="pagination">
+                </ul>
+            </div>
+            
+
             <!--CONTENT END-->
 
             <!--SCRIPT-->
@@ -39,6 +71,8 @@
             <script src="script.js"></script>
 
             <script src="loadanimation.js"></script>
+
+            <script src="filter.js"></script>
             
             <!--SCRIPT END-->
 
