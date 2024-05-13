@@ -18,10 +18,15 @@ xhr.onload = function() {
     }
 }
 
-function renderCars(response) {
+function renderCars(response, currentPage = 1, carsPerPage = 8) {
     const carContainer = document.querySelector(".container-fluid");
+    const startIndex = (currentPage - 1) * carsPerPage;
+    const endIndex = Math.min(startIndex + carsPerPage, response.length); 
+    const currentCars = response.slice(startIndex, endIndex);
 
-    response.forEach(function(data) { 
+    carContainer.innerHTML = "";
+
+    currentCars.forEach(function(data) {
         const row = 
         `
         <div class="row">
@@ -37,8 +42,8 @@ function renderCars(response) {
             <div class="col-3 d-flex flex-column justify-content-center align-items-center">
                 <p>Teljesítmény: ${data.teljesítmény} LE</p>
                 <p>Hengerűrtartalom: ${data.hengerűrtartalom} cc</p>
-                <p>Váltó típusa: ${data.váltó_típusa}</p>
-                <p>Üzemanyag: ${data.üzemanyag_típus}</p>
+                <p>Váltó típusa: ${data.váltó}</p>
+                <p>Üzemanyag: ${data.üzemanyag}</p>
             </div>
             <div class="col-3 d-flex flex-column justify-content-center align-items-center">
                 <p>Km óra állása: ${data.km} Km</p>
@@ -50,6 +55,53 @@ function renderCars(response) {
         `;
         carContainer.innerHTML += row;
     });
+
+    updatePagination(response.length, currentPage, carsPerPage);
+}
+
+function updatePagination(totalCars, currentPage, carsPerPage) {
+    const totalPages = Math.ceil(totalCars / carsPerPage);
+    const paginationContainer = document.querySelector(".pagination");
+
+    paginationContainer.innerHTML = "";
+
+    paginationContainer.innerHTML += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="changePage(${currentPage - 1}); return false;" tabindex="-1" aria-disabled="true">Prior</a>
+        </li>
+    `;
+
+    for (let i = 1; i <= totalPages; i++) {
+        paginationContainer.innerHTML += `
+            <li class="page-item ${currentPage === i ? 'active' : ''}">
+                <a class="page-link" href="#" onclick="changePage(${i}); return false;">${i}</a>
+            </li>
+        `;
+    }
+
+    paginationContainer.innerHTML += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="changePage(${currentPage + 1}); return false;">Next</a>
+        </li>
+    `;
+}
+
+function changePage(pageNumber) {
+    const xhr = new XMLHttpRequest();
+    const url = 'cars.json';
+
+    xhr.open("GET", url, true);
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            const response = JSON.parse(xhr.responseText);
+            renderCars(response, pageNumber);
+            window.scrollTo(0, 0); // Az oldal tetejére ugrás
+        } else {
+            console.error("AJAX hiba: ", xhr.statusText);
+        }
+    };
+    xhr.send();
 }
 
 xhr.send();
