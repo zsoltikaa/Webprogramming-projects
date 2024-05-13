@@ -1,32 +1,13 @@
-// JavaScript (loadanimation.js)
+const filterMenu = document.querySelector(".filterMenu");
 
-// Amikor a dokumentum betöltődik
-document.addEventListener("DOMContentLoaded", function() {
-    // Gomb elem kiválasztása
-    var filterButton = document.getElementById('filterButton');
-    // Szűrő menü létrehozása
-    var filterMenu = document.createElement('div');
-    filterMenu.classList.add('filter-menu'); // Adjuk hozzá a filter-menu osztályt a szűrő menühöz
-    filterMenu.innerHTML = `
-        <select class="form-select">
-            <option selected>Válasszon kategóriát</option>
-            <option value="option1">Opció 1</option>
-            <option value="option2">Opció 2</option>
-            <option value="option3">Opció 3</option>
-        </select>
-    `;
-    // Szűrő menü hozzáadása a dokumentumhoz
-    document.body.appendChild(filterMenu);
-    // Szűrő menü rejtése
-    filterMenu.style.display = 'none';
+let toggle = false;
 
-    // Gomb kattintás eseménykezelése
-    filterButton.addEventListener('click', function() {
-        // Ha a szűrő menü látható, akkor elrejtjük, egyébként megjelenítjük
-        if (filterMenu.style.display === 'block') {
-            filterMenu.style.display = 'none';
-        } else {
-            filterMenu.style.display = 'block';
-        }
-    });
-});
+function toggleFilters() {
+    toggle = !toggle;
+    if (toggle) {
+        filterMenu.style.display = "block";
+    }
+    else {
+        filterMenu.style.display = "none";
+    }
+}
