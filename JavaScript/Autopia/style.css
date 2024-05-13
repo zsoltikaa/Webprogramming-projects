@@ -3,6 +3,7 @@
     --textcolor: #DDE6ED;
     --pagebgcolor: #27374D;
     --bordercolor: #9DB2BF;
+    --filterbgcolor: #455a6b;
 }
 
 * {
@@ -12,6 +13,7 @@
 
 body {
    background-color: var(--pagebgcolor);
+   font-size: 0.85vw;
 }
 
 .logo {
@@ -46,11 +48,57 @@ img {
     height: 100%;
 }
 
-.col-3 {
+.col-lg-3, .col-12 {
     padding: 0;
 }
 
-.col-3:not(:first-child) {
+.col-lg-3:not(:first-child) {
     padding: 0;
     border-left: 1px solid var(--bordercolor);
+}
+
+.row:last-child{
+    margin-bottom: 30px;
+}
+
+@media (max-width: 991px) {
+    body {
+      font-size: 12px;
+    }
+
+    .car-img{
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        border-bottom: 1px solid var(--bordercolor);
+    }
+
+    .title{
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--bordercolor);
+        text-align: center;
+    }
+  }
+
+.filterMenu {
+    display: none;
+    width: 100%;
+    background-color: var(--filterbgcolor);
+    border-top: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    padding: 15px;
+}
+
+option {
+    color: black;
+}
+
+#filterButton {
+    margin: 0 15px;
+}
+
+.mb-3 {
+    max-width: 450px;
 }
