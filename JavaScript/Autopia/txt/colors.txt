@@ -9,3 +9,12 @@ https://colorhunt.co/palette/f4f4f4f0a500cf75001a1c20
 
 uiverse:
 https://uiverse.io/elements
+
+checkbox:
+https://uiverse.io/vishnupprajapat/wicked-catfish-29
+
+button:
+https://uiverse.io/yaasiinaxmed/serious-stingray-77
+
+dark mode switch:
+https://uiverse.io/Madflows/fresh-fireant-15
