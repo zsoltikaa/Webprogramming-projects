@@ -1,9 +1,9 @@
 :root {
-    --navbarbgcolor: #526D82;
-    --textcolor: #DDE6ED;
-    --pagebgcolor: #27374D;
-    --bordercolor: #9DB2BF;
-    --filterbgcolor: #455a6b;
+    --navbarbgcolor: #1A1C20;
+    --textcolor: #F0A500;
+    --pagebgcolor: #282b30;
+    --bordercolor: #3f3f42;
+    --filterbgcolor: #1b1a1a;
 }
 
 * {
@@ -20,6 +20,13 @@ body {
     height: 50px;
     width: 50px;
     margin: 0 10px;
+    filter: drop-shadow(2px 3px 16px orange);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .navbar-brand {
@@ -33,10 +40,18 @@ body {
 
 .row {
     background-color: var(--navbarbgcolor);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-height: 100px;
+    line-height: 15px;
     border-radius: 20px;
     width: 80% !important;
     margin: 30px auto 0;
-    border: 1px solid var(--bordercolor);
+    border: 1.5px solid var(--bordercolor);
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, var(--navbarbgcolor), var(--pagebgcolor));  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, var(--navbarbgcolor), var(--pagebgcolor)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -46,9 +61,12 @@ img {
     border-radius: 20px 0 0 20px;
     width: 100%;
     height: 100%;
+    filter: brightness(95%);
+    filter: contrast(1.1);
+    filter: saturate(135%);
 }
 
-.col-lg-3, .col-12 {
+.col-lg-4, .col-12, .col-3 {
     padding: 0;
 }
 
@@ -59,6 +77,12 @@ img {
 
 .row:last-child{
     margin-bottom: 30px;
+}
+
+.row .col-3:nth-child(2) p:first-child {
+    color: gold;
+    text-shadow: 0 0 5px orange;
+    font-weight: bold;
 }
 
 @media (max-width: 991px) {
@@ -97,8 +121,98 @@ option {
 
 #filterButton {
     margin: 0 15px;
+    background-color: #f0a400d9;
+    color: black;
+    font-weight: bold;
+}
+
+#filterButton:hover {
+    color: gold;
+    transition: 0.3s ease-in-out;
+    text-shadow: 0 0 10px #f0a400d9;
 }
 
 .mb-3 {
     max-width: 450px;
+}
+
+.text-glow {
+    color: orange;
+    text-shadow: 0 0 10px #f0a400d9;
+}
+
+.btn-glow {
+    color: orange;
+    text-shadow: 0 0 10px #f0a400d9;
+}
+
+.pagination-container {
+    margin-top: 0;
+}
+
+.pagination-container ul.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.pagination-container ul.pagination li.page-item a.page-link {
+    color: black;
+    border-radius: 5px;
+    background-color: #f0a400d9; 
+    border-color: #f0a400d9; 
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s; 
+    margin: 5px; 
+    padding: 5px 10px; 
+    font-weight: bolder;
+}
+
+.pagination-container ul.pagination li.page-item a.page-link:hover {
+    color: black; 
+    background-color: transparent; 
+    border-color: #f0a400d9; 
+    color: #f0a400d9;
+    font-style: italic;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #ffc107; 
+    border-color: #ffc107; 
+    color: #000; 
+}
+
+label {
+    margin: 3px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    color: orange;
+    text-shadow: 0 0 10px #f0a400d9;
+}
+
+label.form-label {
+    margin: 3px;
+    color: orange;
+    text-shadow: 0 0 10px #f0a400d9;
+}
+
+.form-select {
+    background-color: #ffffffb4;
+}
+
+.form-control {
+    background-color: #ffffffb4;
+}
+
+.form-control:focus {
+    background-color: #ffffffb4;
+}
+
+#apply:hover {
+    background-color: #F0A500;
+    color: black;
+    transition: ease-in-out 0.4s;
+    font-weight: bold;
 }
