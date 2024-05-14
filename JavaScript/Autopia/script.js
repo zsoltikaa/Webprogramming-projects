@@ -29,23 +29,23 @@ function renderCars(response, currentPage = 1, carsPerPage = 8) {
     currentCars.forEach(function(data) {
         const row = 
         `
-        <div class="row">
-            <div class="col-3">
+        <div class="row carRow">
+            <div class="col-12 col-lg-3">
             <img src="${data.url}" alt="">
             </div>
-            <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-12 col-lg-3 d-flex flex-column justify-content-center align-items-center">
                 <p>${data.márka} ${data.modell} ${data.típusjel}</p>
                 <p>Évjárat: ${data.évjárat}</p>
                 <p>Kivitel: ${data.kivitel}</p>
                 <p>Állapot: ${data.állapot}</p>
             </div>
-            <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-12 col-lg-3 d-flex flex-column justify-content-center align-items-center">
                 <p>Teljesítmény: ${data.teljesítmény} LE</p>
                 <p>Hengerűrtartalom: ${data.hengerűrtartalom} cc</p>
                 <p>Váltó típusa: ${data.váltó}</p>
                 <p>Üzemanyag: ${data.üzemanyag}</p>
             </div>
-            <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-12 col-lg-3 d-flex flex-column justify-content-center align-items-center">
                 <p>Km óra állása: ${data.km} Km</p>
                 <p>Érvényes magyar forgalmi: ${data.okmanyok ? "Igen" : "Nem"}</p>
                 <p>Elérhetőség: ${data.elérhetőség}</p>
@@ -67,7 +67,7 @@ function updatePagination(totalCars, currentPage, carsPerPage) {
 
     paginationContainer.innerHTML += `
         <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-            <a class="page-link" href="#" onclick="changePage(${currentPage - 1}); return false;" tabindex="-1" aria-disabled="true">Prior</a>
+            <a class="page-link" href="#" onclick="changePage(${currentPage - 1}); return false;" tabindex="-1" aria-disabled="true">Prev</a>
         </li>
     `;
 
@@ -96,12 +96,48 @@ function changePage(pageNumber) {
         if (xhr.status == 200) {
             const response = JSON.parse(xhr.responseText);
             renderCars(response, pageNumber);
-            window.scrollTo(0, 0); // Az oldal tetejére ugrás
+            window.scrollTo(0, 0);
         } else {
             console.error("AJAX hiba: ", xhr.statusText);
         }
     };
     xhr.send();
 }
+
+function fillSelect() {
+    const carBrand = document.getElementById("carBrand");
+    const xhr = new XMLHttpRequest();
+    const url = 'cars.json';
+    let brands = [];
+
+    xhr.open("GET", url, true);
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            const response = JSON.parse(xhr.responseText);
+            response.forEach(function(data){
+                if (!brands.includes(data.márka)) 
+                {
+                    brands.push(String(data.márka))
+                }
+            });
+
+            brands.sort().forEach(function(data) {
+                const option = 
+                `
+                <option value="${data}">${data}</option>
+                `;
+                            
+                carBrand.innerHTML += option;
+            });
+
+        } else {
+            console.error("AJAX hiba: ", xhr.statusText);
+        }
+    }
+    xhr.send();
+}
+
+fillSelect();
 
 xhr.send();
