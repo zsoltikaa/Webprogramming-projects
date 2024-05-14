@@ -23,13 +23,17 @@
                         Autopia
                     </span>
                 </a>
-                <button id="filterButton" onclick="toggleFilters()" class="btn btn-dark animate__animated animate__fadeInDown">Filter</button>
+                <button id="filterButton" onclick="toggleFilters()" class="btn btn-dark animate__animated animate__fadeInDown">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                        <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z"/>
+                      </svg>
+                </button>
             </nav>
             <div class="filterMenu">
                 <form>
                     <div class="row">
 
-                        <div class="col-12 col-lg-4">
+                        <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
                             <div class="mb-3">
                                 <label for="carBrand">Brands</label>
                                 <select class="form-select" aria-label="Brand" id="carBrand">
@@ -41,15 +45,42 @@
                                 <input type="text" class="form-control" id="carModel" placeholder="E.g. Golf">
                               </div>
                         </div>
-                        <div class="col-12 col-lg-4">
+                        <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
                             <div class="mb-3">
                                 <label for="kmFrom">Mileage from</label>
-                                <input type="text" class="form-control" id="kmFrom">
+                                <label for="kmTo" style="float: right;">Mileage to</label>
+                                <div class="inputs">
+                                    <input type="text" class="form-control" id="kmFrom" placeholder="E.g. 200km">
+                                    <input type="text" class="form-control" id="kmTo" placeholder="E.g. 155 000km">
+                                </div>
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="priceFrom">Price from</label>
+                                <label for="priceTo" style="float: right;">Price to</label>
+                                <div class="inputs">
+                                    <input type="text" class="form-control" id="priceFrom" placeholder="E.g. 450.000">
+                                    <input type="text" class="form-control" id="priceTo" placeholder="E.g. 9.500.000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                            <div class="mb-3">
+                                <label for="carTransmission">Transmission</label>
+                                <select class="form-select" aria-label="Brand" id="carFuel">
+                                    <option selected>Any</option>
+                                    <option value="manuális">Manual</option>
+                                    <option value="automata">Automatic</option>
+                                  </select>                           
                             </div>
                             <div class="mb-3">
-                                <label for="kmTo" class="form-label">Mileage To</label>
-                                <input type="text" class="form-control" id="kmTo">
-                              </div>
+                                <label for="carFuel">Fuel type</label>
+                                <select class="form-select" aria-label="Brand" id="carFuel">
+                                    <option selected>Any</option>
+                                    <option value="benzin">Petrol</option>
+                                    <option value="dízel">Diesel</option>
+                                    <option value="elektromos">Electric</option>
+                                  </select>
+                            </div>
                         </div>
 
                         <!--<button type="submit" class="btn btn-dark btn-glow" id="apply">Apply</button>-->
