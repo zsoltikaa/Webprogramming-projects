@@ -125,10 +125,10 @@ function renderCars(cars, currentPage = 1, carsPerPage = 8) {
         const row = `
         <div class="row carRow">
             <div class="col-12 col-lg-3">
-                <img src="${data.url}" alt="">
+                <img src="${data.url}" alt="" class="car-img">
             </div>
             <div class="col-12 col-lg-3 d-flex flex-column justify-content-center align-items-center">
-                <p>${data.márka} ${data.modell} ${data.típusjel}</p>
+                <p class="title">${data.márka} ${data.modell} ${data.típusjel}</p>
                 <p>Évjárat: ${data.évjárat}</p>
                 <p>Kivitel: ${data.kivitel}</p>
                 <p>Állapot: ${data.állapot}</p>
@@ -157,6 +157,13 @@ function updatePagination(totalCars, currentPage, carsPerPage) {
     let maxDisplayedPages = 6;
     const totalPages = Math.ceil(totalCars / carsPerPage);
     const paginationContainer = document.querySelector(".pagination");
+
+    if(totalPages <= 1){
+        paginationContainer.style.display = "none";
+        return;
+    } else{
+        paginationContainer.style.display = "flex";
+    }
 
     paginationContainer.innerHTML = "";
 
