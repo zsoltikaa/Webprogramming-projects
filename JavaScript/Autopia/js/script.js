@@ -1,4 +1,4 @@
-let isAscending = true; // Kezdetben növekvő sorrend
+let isAscending = true; 
 
 document.addEventListener("DOMContentLoaded", () => {
     loadCarData();
@@ -17,11 +17,10 @@ function setupEventListeners() {
         sortCarsByPrice(sortButton);
     });
 
-
     document.getElementById('resetFilters').addEventListener('click', resetFilters);
 }
 
-let carsData = []; // Eredeti autó adatok
+let carsData = [];
 
 function loadCarData() {
     const xhr = new XMLHttpRequest();
@@ -35,7 +34,7 @@ function loadCarData() {
             populateDropdowns(carsData);
             renderCars(carsData);
         } else {
-            console.error("AJAX hiba: ", xhr.statusText);
+            console.error("AJAX error: ", xhr.statusText);
         }
     };
     xhr.send();
@@ -45,8 +44,8 @@ function populateDropdowns(cars) {
     const brandSelect = document.getElementById("carBrand");
     const typeSelect = document.getElementById("carType");
 
-    const brands = [...new Set(cars.map(car => car.márka))].sort(); 
-    const types = [...new Set(cars.map(car => car.kivitel))];
+    const brands = [...new Set(cars.map(car => car.brand))].sort(); 
+    const types = [...new Set(cars.map(car => car.type))];
 
     brands.forEach(brand => {
         const option = document.createElement("option");
@@ -58,11 +57,19 @@ function populateDropdowns(cars) {
     types.forEach(type => {
         const option = document.createElement("option");
         option.value = type;
-        option.textContent = type;
+        option.textContent = capitalizeFirstLetter(type);
         typeSelect.appendChild(option);
     });
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function toggleFilters() {
+    const filterMenu = document.querySelector(".filterMenu");
+    filterMenu.style.display = filterMenu.style.display === "block" ? "none" : "block";
+}
 
 function applyFilters() {
     const filteredCars = filterCars(carsData);
@@ -85,15 +92,15 @@ function filterCars(cars) {
     const performanceTo = parseInt(document.getElementById("performanceTo")?.value) || Infinity;
 
     return cars.filter(car => {
-        return (brand === "Any" || car.márka === brand) &&
-            (model === "" || includesEveryChar(car.modell.toLowerCase(), model.split(''))) &&
-            (type === "Any" || car.kivitel === type) &&
+        return (brand === "Any" || car.brand === brand) &&
+            (model === "" || includesEveryChar(car.model.toLowerCase(), model.split(''))) &&
+            (type === "Any" || car.type === type) &&
             (car.km >= kmFrom && car.km <= kmTo) &&
-            (car.évjárat >= yearFrom && car.évjárat <= yearTo) &&
-            (car.vételár >= priceFrom && car.vételár <= priceTo) &&
-            (transmission === "Any" || car.váltó === transmission) &&
-            (fuel === "Any" || car.üzemanyag === fuel) &&
-            (car.teljesítmény >= performanceFrom && car.teljesítmény <= performanceTo);
+            (car.year >= yearFrom && car.year <= yearTo) &&
+            (car.price >= priceFrom && car.price <= priceTo) &&
+            (transmission === "Any" || car.transmission === transmission) &&
+            (fuel === "Any" || car.fuel === fuel) &&
+            (car.performance >= performanceFrom && car.performance <= performanceTo);
     });
 }
 
@@ -113,7 +120,7 @@ function includesEveryChar(string, charArray){
     return true;
 }
 
-function renderCars(cars, currentPage = 1, carsPerPage = 8) {
+function renderCars(cars, currentPage = 1, carsPerPage = 10) {
     const carContainer = document.querySelector(".container-fluid");
     const startIndex = (currentPage - 1) * carsPerPage;
     const endIndex = Math.min(startIndex + carsPerPage, cars.length);
@@ -123,27 +130,27 @@ function renderCars(cars, currentPage = 1, carsPerPage = 8) {
 
     currentCars.forEach(function(data) {
         const row = `
-        <div class="row carRow">
+        <div class="row carRow animate-fadeIn">
             <div class="col-12 col-lg-3">
                 <img src="${data.url}" alt="" class="car-img">
             </div>
             <div class="col-12 col-lg-3 d-flex flex-column justify-content-center align-items-center">
-                <p class="title">${data.márka} ${data.modell} ${data.típusjel}</p>
-                <p>Évjárat: ${data.évjárat}</p>
-                <p>Kivitel: ${data.kivitel}</p>
-                <p>Állapot: ${data.állapot}</p>
+                <p class="title">${data.brand} ${data.model} ${data.variant}</p>
+                <p>Year: ${data.year}</p>
+                <p>Type: ${data.type}</p>
+                <p>Condition: ${data.condition}</p>
             </div>
             <div class="col-12 col-lg-3 d-flex flex-column justify-content-center align-items-center">
-                <p>Teljesítmény: ${data.teljesítmény} LE</p>
-                <p>Hengerűrtartalom: ${data.hengerűrtartalom} cc</p>
-                <p>Váltó típusa: ${data.váltó}</p>
-                <p>Üzemanyag: ${data.üzemanyag}</p>
+                <p>Performance: ${data.performance} HP</p>
+                <p>Engine Capacity: ${data.capacity} cc</p>
+                <p>Transmission: ${data.transmission}</p>
+                <p>Fuel Type: ${data.fuel}</p>
             </div>
             <div class="col-12 col-lg-3 d-flex flex-column justify-content-center align-items-center">
-                <p>Km óra állása: ${data.km} Km</p>
-                <p>Érvényes magyar forgalmi: ${data.okmanyok ? "Igen" : "Nem"}</p>
-                <p>Elérhetőség: ${data.elérhetőség}</p>
-                <p class="text-glow">Vételár: ${formatter.format(data.vételár)} HUF</p>
+                <p>Mileage: ${data.km} km</p>
+                <p>Valid Hungarian License: ${data.documents ? "yes" : "no"}</p>
+                <p>Contact: ${data.contact}</p>
+                <p class="text-glow">Price: ${formatter.format(data.price)}</p>
             </div>
         </div>
         `;
@@ -199,6 +206,7 @@ function changePage(pageNumber) {
     history.pushState({ page: pageNumber }, `Page ${pageNumber}`, `?page=${pageNumber}`);
     const filteredCars = filterCars(carsData);
     renderCars(filteredCars, pageNumber);
+    window.scrollTo(0, 0); 
 }
 
 window.addEventListener('popstate', function(event) {
@@ -209,14 +217,14 @@ window.addEventListener('popstate', function(event) {
 function sortCarsByPrice(sortButton) {
     const filteredCars = filterCars(carsData);
     if (isAscending) {
-        filteredCars.sort((a, b) => a.vételár - b.vételár);
+        filteredCars.sort((a, b) => a.price - b.price);
         sortButton.innerHTML = "Sort by price (low to high)";
     } else {
-        filteredCars.sort((a, b) => b.vételár - a.vételár);
+        filteredCars.sort((a, b) => b.price - a.price);
         sortButton.innerHTML = "Sort by price (high to low)";
     }
     renderCars(filteredCars);
-    isAscending = !isAscending; 
+    isAscending = !isAscending;
 }
 
 function resetFilters() {
@@ -238,6 +246,26 @@ function resetFilters() {
 }
 
 const formatter = new Intl.NumberFormat('hu-HU', {
-    style: 'decimal',
-    minimumFractionDigits: 0
+    style: 'currency',
+    currency: 'HUF',
 });
+
+window.onscroll = function() {scrollFunction()};
+
+document.getElementById("floatButton").addEventListener("click", function(){
+    backToTop();
+});
+
+function scrollFunction() {
+    var floatButton = document.getElementById("floatButton");
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        floatButton.classList.add("show");
+    } else {
+        floatButton.classList.remove("show");
+    }
+}
+
+function backToTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
