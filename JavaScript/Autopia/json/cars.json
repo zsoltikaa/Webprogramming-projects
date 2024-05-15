@@ -17,6 +17,23 @@
         "documents": true
     },
     {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/2022_Avatr_11_%28front%29.jpg",
+        "brand": "AVATR",
+        "model": "11",
+        "variant": "",
+        "year": 2024,
+        "type": "SUV",
+        "condition": "new",
+        "capacity": 0,
+        "performance": 308,
+        "km": 100,
+        "fuel": "electric",
+        "contact": "+36 30 756 9816",
+        "price": 17000000,
+        "transmission": "automatic",
+        "documents": true
+    },
+    {
         "url": "https://cloud.leparking.fr/2022/06/16/12/01/citroen-ds5-2017-ds-5-2-0-bluehdi-180-prestige-5dr-eat6-gris_8532147098.jpg",
         "brand": "DS5",
         "model": "",
