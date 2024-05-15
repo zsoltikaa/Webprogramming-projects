@@ -1,8 +1,0 @@
-- az oldal alján a lapozón valahogyan mutatni, hogy hanyadik oldalon tartózkodsz
-- a "Performance From" és "Performance To" input mezők szélességének beállítása
-- még több autó hozzáadása a "cars.json" fájlhoz
-- a "hírdetések" megjelenítésének meganimálása
-  -> a beimportált osztály használata? -> felváltva balról és jobbról "FadeInLeft" és "FadeInRight"
-  -> saját animáció írása
-- az oldalon lévő kurzor testreszabása
-- az egész oldal angolra fordítása?
