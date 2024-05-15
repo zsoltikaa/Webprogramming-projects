@@ -82,6 +82,8 @@ body {
     color: gold;
     text-shadow: 0 0 8px orange;
     font-weight: bold;
+    text-align: center;
+    padding: 0 10px;
 }
 
 @media (max-width: 991px) {
@@ -117,7 +119,7 @@ body {
 option {
     color: black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #filterButton, #resetFilters, #sortPriceButton {
@@ -339,4 +341,76 @@ label.form-label {
 #hpLabel:nth-child(2){
     text-align: right;
     padding-right: 10px;
+}
+
+.active .page-link{
+    background-color: transparent !important;
+    color: var(--textcolor) !important;
+    font-style: italic;
+}  
+
+input:focus, input.form-control:focus {
+    outline: var(--textcolor) !important;
+    outline-width: 50 !important;
+    box-shadow: 1px 1px 6px var(--textcolor), -1px -1px 6px var(--textcolor) !important;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slideIn {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.float-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--textcolor);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.float-button:hover {
+    background-color: var(--pagebgcolor);
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 0px 5px var(--textcolor);
+}
+
+.float-button.show {
+    opacity: 1;
 }
