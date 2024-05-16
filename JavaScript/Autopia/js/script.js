@@ -34,14 +34,24 @@ function loadCarData() {
     xhr.onload = function() {
         if (xhr.status == 200) {
             carsData = JSON.parse(xhr.responseText); 
-            populateDropdowns(carsData);
-            renderCars(carsData);
+
+            const firstFour = carsData.slice(0, 4);
+
+            const rest = carsData.slice(4).sort(function() {
+                return 0.5 - Math.random();
+            });
+            
+            const shuffledCarsData = firstFour.concat(rest);
+            
+            populateDropdowns(shuffledCarsData);
+            renderCars(shuffledCarsData);
         } else {
-            console.error("AJAX error: ", xhr.statusText);
+            console.error("AJAX hiba: ", xhr.statusText);
         }
     };
     xhr.send();
 }
+
 
 function populateDropdowns(cars) {
     const brandSelect = document.getElementById("carBrand");
