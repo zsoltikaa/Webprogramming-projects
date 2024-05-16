@@ -1,3 +1,0 @@
-- a szuro megnyitasaval a kocsik az animacioval egyutt menjenek le es jojjenek fel ????????????????
-- json fajl tovabbi feltoltese
-- info gomb a navbarra, amelyre ha rakattintasz feldob egy ablakot, amelyen egy bemutatkozo szoveget lehet olvasni es ki lehet x-elni ??????????
