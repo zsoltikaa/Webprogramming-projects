@@ -28,10 +28,8 @@
     </nav>
 
     <div class="filterMenu">
-        
         <form>
-            
-            <div class="row">
+            <div class="row align-items-center"> <!-- Added align-items-center to row -->
                 <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
                     <div class="mb-3">
                         <label for="carBrand">Brands</label>
@@ -63,8 +61,8 @@
                         <label for="priceFrom">Price from</label>
                         <label for="priceTo" style="float: right;">Price to</label>
                         <div class="inputs">
-                            <input type="text" class="form-control" id="priceFrom" placeholder="E.g. 450.000 HUF">
-                            <input type="text" class="form-control" id="priceTo" placeholder="E.g. 3.500.000 HUF">
+                            <input type="text" class="form-control" id="priceFrom" placeholder="E.g. 200.000Ft">
+                            <input type="text" class="form-control" id="priceTo" placeholder="E.g. 950.000Ft">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -108,10 +106,10 @@
                     <button type="button" class="btn btn-dark" id="resetFilters">Reset filters</button>
                 </div>
             </div>
-            
         </form>
-        
+
     </div>
+    
 
     <div id="floatButton" class="float-button">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffde98" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
