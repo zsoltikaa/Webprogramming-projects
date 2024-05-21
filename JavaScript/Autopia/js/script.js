@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupEventListeners();
 });
 
+
 function setupEventListeners() {
     const filters = document.querySelectorAll("#carBrand, #carModel, #kmFrom, #kmTo, #priceFrom, #priceTo, #carTransmission, #carFuel, #carType, #performanceFrom, #performanceTo, #yearFrom, #yearTo");
 
@@ -143,7 +144,7 @@ function renderCars(cars, currentPage = 1, carsPerPage = 10) {
 
     currentCars.forEach(function(data) {
         const row = `
-        <div class="row carRow animate-fadeIn">
+        <div class="row carRow">
             <div class="col-12 col-lg-3">
                 <img src="${data.url}" alt="" class="car-img">
             </div>
@@ -288,6 +289,8 @@ function checkFiltersState() {
 const formatter = new Intl.NumberFormat('hu-HU', {
     style: 'currency',
     currency: 'HUF',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
 });
 
 window.onscroll = function() {scrollFunction()};
@@ -306,8 +309,37 @@ function scrollFunction() {
 }
 
 function backToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
 }
+
+document.querySelectorAll('.hover-effect').forEach(button => {
+    button.addEventListener('mouseenter', function(e) {
+        const particlesContainer = document.createElement('div');
+        particlesContainer.classList.add('particles-container');
+        button.appendChild(particlesContainer);
+        
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particlesContainer.appendChild(particle);
+            
+            const size = Math.random() * 10 + 5;
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const delay = Math.random() * 0.5;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${x}%`;
+            particle.style.top = `${y}%`;
+            particle.style.animationDelay = `${delay}s`;
+        }
+        
+        setTimeout(() => {
+            particlesContainer.remove();
+        }, 1500);
+    });
+});
 
 checkFiltersState();
