@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Pet Food Store</title>
+    <link rel="stylesheet" href="css/statistics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Lugrasimo&family=Ms+Madi&family=Tangerine:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Gwendolyn:wght@400;700&family=Lugrasimo&family=Ms+Madi&family=Tangerine:wght@400;700&display=swap');
+    </style>
+
+</head>
+
+    <body>
+
+        <!-- HEADER START -->
+
+        <header>
+            <h1>Premium Pet Food</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="order.html">Order</a>
+                <a href="statistics.html">Statistics</a>
+            </nav>
+        </header>
+
+        <!-- HEADER END -->
+
+        <!-- MAIN START -->
+
+        <main>
+
+            <section class="statistics">
+
+                <h2>Order Statistics</h2>
+
+                <div class="grid-container">
+                    <div class="stat-card">
+                        <h3>Monthly Orders</h3>
+                        <canvas id="monthlyOrdersChart"></canvas>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Most Popular Products</h3>
+                        <canvas id="popularProductsChart"></canvas>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Revenue by Month</h3>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- HAIN END -->
+
+        <!-- FOOTER START -->
+
+        <footer>
+            <p>&copy; 2024 Anifood. <br>All Rights Reserved.</p>
+        </footer>
+
+        <!-- FOOTER END -->
+
+        <script src="js/statistics.js"></script>
+
+    </body>
+
+</html>

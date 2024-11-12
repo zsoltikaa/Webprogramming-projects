@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Pet Food Store</title>
+    <link rel="stylesheet" href="css/order.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Lugrasimo&family=Ms+Madi&family=Tangerine:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Gwendolyn:wght@400;700&family=Lugrasimo&family=Ms+Madi&family=Tangerine:wght@400;700&display=swap');
+    </style>
+
+</head>
+
+    <body>
+
+        <!-- HEADER START -->
+
+        <header>
+            <h1>Premium Pet Food</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="order.html">Order</a>
+                <a href="statistics.html">Statistics</a>
+            </nav>
+        </header>
+
+        <!-- HEADER END -->
+
+        <!-- MAIN START -->
+
+        <main>
+
+            <section class="order-form-container">
+
+                <h2>Place Your Order</h2>
+
+                <form action="/submit-order" method="POST" class="order-form">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="street">Street Address</label>
+                        <input type="text" id="street" name="street" required placeholder="Street Address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required placeholder="City">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postal-code">Postal Code</label>
+                        <input type="text" id="postal-code" name="postal-code" required placeholder="Postal Code">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product">Select Product</label>
+                        <select id="product" name="product" required>
+                            <option value="dog-food">Dog Food</option>
+                            <option value="cat-food">Cat Food</option>
+                            <option value="bird-food">Bird Food</option>
+                            <option value="goldfish-food">Goldfish Food</option>
+                            <option value="Hamster-food">Hamster Food</option>
+                            <option value="horse-food">Horse Food</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" min="1" required placeholder="How many?">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Place Order</button>
+                    
+                </form>
+
+            </section>
+
+        </main>
+
+        <!-- MAIN END -->
+
+        <!-- FOOTER START -->
+
+        <footer>
+            <p>&copy; 2024 Anifood. <br>All Rights Reserved.</p>
+        </footer>
+
+        <!-- FOOTER END -->
+
+        <script src="js/order.js"></script>
+
+    </body>
+
+</html>
